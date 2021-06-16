@@ -95,4 +95,4 @@ function deparam(params, coerce = false) {
     });
       
     return obj;
-};
+}
