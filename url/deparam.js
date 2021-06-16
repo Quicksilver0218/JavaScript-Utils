@@ -1,7 +1,7 @@
 // modified from chrissrogers' jquery-deparam.js
 /**
  * Parse an URL query string to an object.
- * @param {string} params The query string after "?".
+ * @param {string} params The query string after "?" in an URL.
  * @param {boolean} coerce Whether the string value should be parsed to other types.
  * @returns {object} The parsing result object.
  */
