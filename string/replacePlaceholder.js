@@ -3,7 +3,7 @@
  * @param {string} str The string with placeholders to be replaced.
  * @param {string[]} params The parameters to replace the placeholders.
  * @param {string} marker The marker used to mark the placeholders. 2 continuous markers is the escape sequence which represents keeping 1 original marker.
- * @returns The new string that the placeholders are replaced.
+ * @returns {string} The new string that the placeholders are replaced.
  */
 function replacePlaceholder(str, params, marker = '$') {
 	const parts = str.split(marker + marker);
