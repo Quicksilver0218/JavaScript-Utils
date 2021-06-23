@@ -1,5 +1,6 @@
 /**
  * Replace the placeholders with the given parameters in a string.
+ * e.g. replacePlaceholder('$0$$$1$$2', ['a', 'b', 'c'], '$') -> 'a$b$2'
  * @param {string} str The string with placeholders to be replaced.
  * @param {string[]} params The parameters to replace the placeholders.
  * @param {string} marker The marker used to mark the placeholders. 2 continuous markers is the escape sequence which represents keeping 1 original marker.
