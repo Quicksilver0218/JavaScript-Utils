@@ -15,8 +15,8 @@ function replacePlaceholder(str, params, marker = '$') {
 }
 
 function replacePlaceholderRecurse(str, params, marker, level) {
-	const arr = str.split(marker + level);
+	const parts = str.split(marker + level);
 	if (level + 1 < params.length)
-		arr.forEach((element, index) => arr[index] = replacePlaceholderRecurse(element, params, marker, level + 1));
-	return arr.join(params[level]);
+		parts.forEach((part, i) => parts[i] = replacePlaceholderRecurse(part, params, marker, level + 1));
+	return parts.join(params[level]);
 }
