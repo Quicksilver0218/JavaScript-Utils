@@ -7,16 +7,16 @@
  * @returns {string} The new string that the placeholders are replaced.
  */
 function replacePlaceholder(str, params, marker = '$') {
-	const parts = str.split(marker + marker);
-	parts.forEach((part, i) => {
-		parts[i] = replacePlaceholderRecurse(part, params, marker, 0);
-	});
-	return parts.join(marker);
+    const parts = str.split(marker + marker);
+    parts.forEach((part, i) => {
+        parts[i] = replacePlaceholderRecurse(part, params, marker, 0);
+    });
+    return parts.join(marker);
 }
 
 function replacePlaceholderRecurse(str, params, marker, level) {
-	const parts = str.split(marker + level);
-	if (level + 1 < params.length)
-		parts.forEach((part, i) => parts[i] = replacePlaceholderRecurse(part, params, marker, level + 1));
-	return parts.join(params[level]);
+    const parts = str.split(marker + level);
+    if (level + 1 < params.length)
+        parts.forEach((part, i) => parts[i] = replacePlaceholderRecurse(part, params, marker, level + 1));
+    return parts.join(params[level]);
 }
