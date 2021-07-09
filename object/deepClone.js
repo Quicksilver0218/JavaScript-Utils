@@ -6,7 +6,7 @@
 function deepClone(inObject) {
     if (typeof inObject !== "object" || inObject === null)
         return inObject;
-    let outObject = Array.isArray(inObject) ? [] : {};
+    const outObject = Array.isArray(inObject) ? [] : {};
     for (let key in inObject)
         outObject[key] = deepClone(inObject[key]);
     return outObject;
