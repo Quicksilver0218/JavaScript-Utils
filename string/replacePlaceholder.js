@@ -3,7 +3,7 @@
  * e.g. replacePlaceholder('$0$$$1$$2', ['a', 'b', 'c'], '$') -> 'a$b$2'
  * e.g. replacePlaceholder('$i$$$j$$k', {i: 'a', j: 'b', k: 'c'}, '$') -> 'a$b$k'
  * @param {string} str The string with placeholders to be replaced.
- * @param {string[]} map The map used to replace the placeholders.
+ * @param {object} map The map used to replace the placeholders.
  * @param {string} marker The marker used to mark the placeholders. 2 continuous markers is the escape sequence which represents keeping 1 original marker.
  * @returns {string} The result string that the placeholders are replaced.
  */
