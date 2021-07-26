@@ -1,7 +1,7 @@
 /**
  * Create a deep clone of an object.
- * @param inObject The object to be cloned.
- * @returns The new object if `inObject` is an object, otherwise `inObject`.
+ * @param {object} inObject The object to be cloned.
+ * @returns {object} The new object if `inObject` is an object, otherwise `inObject`.
  */
 function deepClone(inObject) {
     if (typeof inObject !== "object" || inObject === null)
