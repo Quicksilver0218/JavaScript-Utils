@@ -10,10 +10,10 @@ export const onSubmit = (e: FormEvent, options: { beforeSend?: (form: HTMLFormEl
         if (options.beforeSend(form) === false)
             return;
     const formData = new FormData(form);
-    const method = form.getAttribute('method')?.toUpperCase() || 'GET';
-    const enctype = form.getAttribute('enctype') || 'application/x-www-form-urlencoded';
+    const method = form.method?.toUpperCase() || 'GET';
+    const enctype = form.enctype || 'application/x-www-form-urlencoded';
     const queryString = new URLSearchParams(formData as any).toString();
-    const url = (form.getAttribute('action') || window.location.href) + method == 'GET'? '?' + queryString : '';
+    const url = (form.action || window.location.href) + (method == 'GET'? '?' + queryString : '');
     const init: RequestInit = { method };
     if (method != 'GET')
         switch (enctype) {
