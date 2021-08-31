@@ -19,7 +19,7 @@ function setFormSubmitByAjax(form, options = {}) {
         const method = form.getAttribute('method')?.toUpperCase() || 'GET';
         const enctype = form.getAttribute('enctype') || 'application/x-www-form-urlencoded';
         const queryString = new URLSearchParams(formData).toString();
-        const url = (form.getAttribute('action') || window.location.href) + method == 'GET'? '?' + queryString : '';
+        const url = (form.getAttribute('action') || window.location.href) + (method == 'GET'? '?' + queryString : '');
         const init = { method };
         if (method != 'GET')
             switch (enctype) {
