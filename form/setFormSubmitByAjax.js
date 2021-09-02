@@ -18,8 +18,7 @@ function setFormSubmitByAjax(form, options = {}) {
         const formData = new FormData(form);
         const method = form.getAttribute('method')?.toUpperCase() || 'GET';
         const enctype = form.getAttribute('enctype') || 'application/x-www-form-urlencoded';
-        const queryString = new URLSearchParams(formData).toString();
-        const url = (form.getAttribute('action') || window.location.href) + (method == 'GET'? '?' + queryString : '');
+        const url = (form.getAttribute('action') || window.location.href) + (method == 'GET'? `?${new URLSearchParams(formData).toString()}` : '');
         const init = { method };
         if (method != 'GET')
             switch (enctype) {
@@ -46,7 +45,7 @@ function setFormSubmitByAjax(form, options = {}) {
                     init.headers = {
                         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
                     };
-                    init.body = queryString;
+                    init.body = new URLSearchParams(formData).toString();
                     break;
             }
         const promise = fetch(url, init);
